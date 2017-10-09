@@ -1,5 +1,6 @@
 #import "SignalStorage.h"
 #import "SignalAddress_Internal.h"
+#import "SignalSenderKeyName_Internal.h"
 #import "SignalStorage_Internal.h"
 
 #pragma mark signal_protocol_session_store callbacks
@@ -216,10 +217,9 @@ static int is_trusted_identity(const signal_protocol_address *_address, uint8_t 
 
 static int store_sender_key(const signal_protocol_sender_key_name *sender_key_name, uint8_t *record, size_t record_len, void *user_data) {
     id<SignalSenderKeyStore> senderKeyStore = (__bridge id<SignalSenderKeyStore>)(user_data);
-    SignalAddress *address = [[SignalAddress alloc] initWithAddress:&sender_key_name->sender];
-    NSString *groupId = [NSString stringWithUTF8String:sender_key_name->group_id];
     NSData *key = [NSData dataWithBytes:record length:record_len];
-    BOOL result = [senderKeyStore storeSenderKey:key address:address groupId:groupId];
+    SignalSenderKeyName *senderKeyName = [[SignalSenderKeyName alloc] initWithSenderKeyName:sender_key_name];
+    BOOL result = [senderKeyStore storeSenderKey:key senderKeyName:senderKeyName];
     if (result) {
         return 0;
     } else {
@@ -229,9 +229,8 @@ static int store_sender_key(const signal_protocol_sender_key_name *sender_key_na
 
 static int load_sender_key(signal_buffer **record, const signal_protocol_sender_key_name *sender_key_name, void *user_data) {
     id<SignalSenderKeyStore> senderKeyStore = (__bridge id<SignalSenderKeyStore>)(user_data);
-    SignalAddress *address = [[SignalAddress alloc] initWithAddress:&sender_key_name->sender];
-    NSString *groupId = [NSString stringWithUTF8String:sender_key_name->group_id];
-    NSData *key = [senderKeyStore loadSenderKeyForAddress:address groupId:groupId];
+    SignalSenderKeyName *senderKeyName = [[SignalSenderKeyName alloc] initWithSenderKeyName:sender_key_name];
+    NSData *key = [senderKeyStore loadSenderKeyForSenderKeyName:senderKeyName];
     if (key) {
         signal_buffer *buffer = signal_buffer_create(key.bytes, key.length);
         *record = buffer;
@@ -332,7 +331,7 @@ static int load_sender_key(signal_buffer **record, const signal_protocol_sender_
     senderKeyStoreCallbacks.store_sender_key = store_sender_key;
     senderKeyStoreCallbacks.load_sender_key = load_sender_key;
     senderKeyStoreCallbacks.destroy_func = destroy_func;
-    identityKeyStoreCallbacks.user_data = (__bridge void *)(_senderKeyStore);
+    senderKeyStoreCallbacks.user_data = (__bridge void *)(_senderKeyStore);
     signal_protocol_store_context_set_sender_key_store(_storeContext, &senderKeyStoreCallbacks);
 }
 

@@ -3,7 +3,9 @@
 typedef NS_ENUM(NSInteger, SignalCiphertextType) {
     SignalCiphertextTypeUnknown,
     SignalCiphertextTypeMessage,
-    SignalCiphertextTypePreKeyMessage
+    SignalCiphertextTypePreKeyMessage,
+    SignalCiphertextTypeSenderKeyMessage,
+    SignalCiphertextTypeSenderKeyDistributionMessage
 };
 
 NS_ASSUME_NONNULL_BEGIN

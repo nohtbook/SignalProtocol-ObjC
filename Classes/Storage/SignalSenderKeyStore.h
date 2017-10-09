@@ -1,5 +1,5 @@
 @import Foundation;
-#import "SignalAddress.h"
+#import "SignalSenderKeyName.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -11,13 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
  * Store a serialized sender key record for a given
  * (groupId + senderId + deviceId) tuple.
  */
-- (BOOL) storeSenderKey:(NSData*)senderKey address:(SignalAddress*)address groupId:(NSString*)groupId;
+- (BOOL)storeSenderKey:(NSData *)senderKey senderKeyName:(SignalSenderKeyName *)senderKeyName;
 
 /**
  * Returns a copy of the sender key record corresponding to the
  * (groupId + senderId + deviceId) tuple.
  */
-- (nullable NSData*) loadSenderKeyForAddress:(SignalAddress*)address groupId:(NSString*)groupId;
+- (nullable NSData *)loadSenderKeyForSenderKeyName:(SignalSenderKeyName *)senderKeyName;
 
 @end
 
