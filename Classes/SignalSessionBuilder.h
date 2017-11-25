@@ -1,11 +1,3 @@
-//
-//  SignalSessionBuilder.h
-//  Pods
-//
-//  Created by Chris Ballinger on 6/28/16.
-//
-//
-
 #import <Foundation/Foundation.h>
 #import "SignalContext.h"
 #import "SignalAddress.h"

@@ -1,11 +1,3 @@
-//
-//  SignalIdentityKeyPair_Internal.h
-//  Pods
-//
-//  Created by Chris Ballinger on 6/29/16.
-//
-//
-
 #import "SignalIdentityKeyPair.h"
 @import SignalProtocolC;
 

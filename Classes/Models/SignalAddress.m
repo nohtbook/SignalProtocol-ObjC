@@ -1,11 +1,3 @@
-//
-//  SignalAddress.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/27/16.
-//
-//
-
 #import "SignalAddress.h"
 #import "SignalAddress_Internal.h"
 

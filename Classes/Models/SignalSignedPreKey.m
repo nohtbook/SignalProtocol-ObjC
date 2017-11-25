@@ -1,11 +1,3 @@
-//
-//  SignalSignedPreKey.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/29/16.
-//
-//
-
 #import "SignalSignedPreKey.h"
 #import "SignalSignedPreKey_Internal.h"
 #import "SignalError.h"

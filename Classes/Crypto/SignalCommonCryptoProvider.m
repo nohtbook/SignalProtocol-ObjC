@@ -1,11 +1,3 @@
-//
-//  SignalCommonCryptoProvider.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/27/16.
-//
-//
-
 #import "SignalCommonCryptoProvider.h"
 #import <CommonCrypto/CommonCrypto.h>
 #import <CommonCrypto/CommonRandom.h>

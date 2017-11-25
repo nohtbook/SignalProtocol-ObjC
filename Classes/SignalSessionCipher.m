@@ -1,11 +1,3 @@
-//
-//  SignalSessionCipher.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/30/16.
-//
-//
-
 #import "SignalSessionCipher.h"
 #import "SignalContext_Internal.h"
 #import "SignalStorage_Internal.h"

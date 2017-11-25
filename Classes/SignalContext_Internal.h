@@ -1,11 +1,3 @@
-//
-//  SignalContext_Internal.h
-//  Pods
-//
-//  Created by Chris Ballinger on 6/28/16.
-//
-//
-
 #import "SignalContext.h"
 #import "SignalCommonCryptoProvider.h"
 @import SignalProtocolC;

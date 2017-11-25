@@ -1,11 +1,3 @@
-//
-//  SignalError.h
-//  Pods
-//
-//  Created by Chris Ballinger on 6/28/16.
-//
-//
-
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN

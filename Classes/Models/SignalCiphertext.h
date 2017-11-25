@@ -1,11 +1,3 @@
-//
-//  SignalCiphertext.h
-//  Pods
-//
-//  Created by Chris Ballinger on 6/30/16.
-//
-//
-
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, SignalCiphertextType) {

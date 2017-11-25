@@ -1,11 +1,3 @@
-//
-//  SignalPreKeySignalMessage.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/30/16.
-//
-//
-
 #import "SignalPreKeyMessage.h"
 #import "SignalPreKeyMessage_Internal.h"
 #import "SignalContext_Internal.h"

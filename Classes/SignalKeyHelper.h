@@ -1,11 +1,3 @@
-//
-//  SignalKeyHelper.h
-//  Pods
-//
-//  Created by Chris Ballinger on 6/29/16.
-//
-//
-
 #import <Foundation/Foundation.h>
 #import "SignalContext.h"
 #import "SignalIdentityKeyPair.h"

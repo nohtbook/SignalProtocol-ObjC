@@ -1,11 +1,3 @@
-//
-//  SignalPreKey_Internal.h
-//  Pods
-//
-//  Created by Chris Ballinger on 6/29/16.
-//
-//
-
 #import "SignalPreKey.h"
 @import SignalProtocolC;
 

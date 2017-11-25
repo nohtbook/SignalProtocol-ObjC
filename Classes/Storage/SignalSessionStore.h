@@ -1,11 +1,3 @@
-//
-//  SignalSessionStore.h
-//  SignalProtocol-ObjC
-//
-//  Created by Chris Ballinger on 6/27/16.
-//
-//
-
 #import <Foundation/Foundation.h>
 #import "SignalAddress.h"
 

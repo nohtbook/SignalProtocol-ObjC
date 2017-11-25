@@ -1,11 +1,3 @@
-//
-//  SignalStorage_Internal.h
-//  Pods
-//
-//  Created by Chris Ballinger on 6/27/16.
-//
-//
-
 #import "SignalStorage.h"
 @import SignalProtocolC;
 

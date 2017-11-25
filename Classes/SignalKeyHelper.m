@@ -1,11 +1,3 @@
-//
-//  SignalKeyHelper.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/29/16.
-//
-//
-
 #import "SignalKeyHelper.h"
 #import "SignalContext_Internal.h"
 #import "SignalError.h"

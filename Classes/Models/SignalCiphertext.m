@@ -1,11 +1,3 @@
-//
-//  SignalCiphertext.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/30/16.
-//
-//
-
 #import "SignalCiphertext.h"
 
 @implementation SignalCiphertext

@@ -1,11 +1,3 @@
-//
-//  SignalSessionBuilder.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/28/16.
-//
-//
-
 #import "SignalSessionBuilder.h"
 #import "SignalStorage_Internal.h"
 #import "SignalContext_Internal.h"

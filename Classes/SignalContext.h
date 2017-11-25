@@ -1,11 +1,3 @@
-//
-//  SignalContext.h
-//  SignalProtocol-ObjC
-//
-//  Created by Chris Ballinger on 6/26/16.
-//
-//
-
 @import Foundation;
 #import "SignalStorage.h"
 

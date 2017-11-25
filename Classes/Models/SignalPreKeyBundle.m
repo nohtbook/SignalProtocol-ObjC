@@ -1,11 +1,3 @@
-//
-//  SignalPreKeyBundle.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/30/16.
-//
-//
-
 #import "SignalPreKeyBundle.h"
 #import "SignalPreKeyBundle_Internal.h"
 #import "SignalKeyPair_Internal.h"

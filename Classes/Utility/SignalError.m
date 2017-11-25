@@ -1,11 +1,3 @@
-//
-//  SignalError.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/28/16.
-//
-//
-
 #import "SignalError.h"
 @import SignalProtocolC;
 

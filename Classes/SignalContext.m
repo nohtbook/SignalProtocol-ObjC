@@ -1,11 +1,3 @@
-//
-//  SignalContext.m
-//  SignalProtocol-ObjC
-//
-//  Created by Chris Ballinger on 6/26/16.
-//
-//
-
 #import "SignalContext.h"
 #import "SignalContext_Internal.h"
 #import "SignalCommonCryptoProvider.h"

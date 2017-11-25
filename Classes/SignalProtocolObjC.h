@@ -1,11 +1,3 @@
-//
-//  SignalProtocolObjC.h
-//  SignalProtocolObjC
-//
-//  Created by Chris Ballinger on 3/30/17.
-//
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for SignalProtocolObjC.

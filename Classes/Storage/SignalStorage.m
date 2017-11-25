@@ -1,11 +1,3 @@
-//
-//  SignalStorage.m
-//  SignalProtocol-ObjC
-//
-//  Created by Chris Ballinger on 6/27/16.
-//
-//
-
 #import "SignalStorage.h"
 #import "SignalAddress_Internal.h"
 #import "SignalStorage_Internal.h"

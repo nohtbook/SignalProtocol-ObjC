@@ -1,11 +1,3 @@
-//
-//  SignalMessage.m
-//  Pods
-//
-//  Created by Chris Ballinger on 6/30/16.
-//
-//
-
 #import "SignalMessage.h"
 #import "SignalMessage_Internal.h"
 #import "SignalError.h"

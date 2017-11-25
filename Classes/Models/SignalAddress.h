@@ -1,11 +1,3 @@
-//
-//  SignalAddress.h
-//  Pods
-//
-//  Created by Chris Ballinger on 6/27/16.
-//
-//
-
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN

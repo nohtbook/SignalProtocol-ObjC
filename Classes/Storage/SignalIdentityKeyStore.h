@@ -1,11 +1,3 @@
-//
-//  SignalIdentityKeyStore.h
-//  SignalProtocol-ObjC
-//
-//  Created by Chris Ballinger on 6/27/16.
-//
-//
-
 @import Foundation;
 #import "SignalIdentityKeyPair.h"
 
