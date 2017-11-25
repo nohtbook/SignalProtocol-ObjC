@@ -4,6 +4,12 @@
 
 @implementation SignalMessage
 
+- (void)dealloc {
+    if (_signal_message) {
+        SIGNAL_UNREF(_signal_message);
+    }
+}
+
 - (instancetype)initWithData:(NSData *)data
                      context:(SignalContext *)context
                        error:(NSError **)error {
