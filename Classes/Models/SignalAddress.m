@@ -4,6 +4,7 @@
 
 - (void)dealloc {
     if (_address) {
+        free((void *)_address->name);
         free(_address);
     }
 }
@@ -17,7 +18,7 @@
         _name = [name copy];
         _deviceId = deviceId;
         _address = malloc(sizeof(signal_protocol_address));
-        _address->name = [name UTF8String];
+        _address->name = strdup([name UTF8String]);
         _address->name_len = [name lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
         _address->device_id = deviceId;
     }
