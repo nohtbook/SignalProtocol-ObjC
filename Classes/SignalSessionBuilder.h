@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "SignalContext.h"
 #import "SignalAddress.h"
 #import "SignalError.h"

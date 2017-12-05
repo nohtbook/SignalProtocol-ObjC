@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 #import "SignalSessionStore.h"
 #import "SignalIdentityKeyStore.h"
 #import "SignalPreKeyStore.h"

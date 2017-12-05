@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 //! Project version number for SignalProtocolObjC.
 FOUNDATION_EXPORT double SignalProtocolObjCVersionNumber;
