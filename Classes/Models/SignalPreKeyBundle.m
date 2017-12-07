@@ -115,8 +115,7 @@
         if(result < 0) {
             return handleResult(result);
         }
-    }
-    if(!signed_pre_key) {
+    } else {
         result = SG_ERR_INVALID_KEY;
         return handleResult(result);
     }
