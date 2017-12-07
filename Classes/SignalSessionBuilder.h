@@ -11,7 +11,6 @@
 #import "SignalAddress.h"
 #import "SignalError.h"
 #import "SignalPreKeyBundle.h"
-#import "SignalPreKeyMessage.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface SignalSessionBuilder : NSObject
@@ -23,7 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
                          context:(SignalContext*)context;
 
 - (BOOL) processPreKeyBundle:(SignalPreKeyBundle*)preKeyBundle error:(NSError**)error;
-//- (void) processPreKeyMessage:(SignalPreKeyMessage*)preKeyMessage;
 
 @end
 NS_ASSUME_NONNULL_END

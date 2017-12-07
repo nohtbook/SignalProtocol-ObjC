@@ -12,6 +12,5 @@
 
 @interface SignalContext ()
 @property (nonatomic, readonly) signal_context *context;
-@property (nonatomic, strong, readonly) SignalCommonCryptoProvider *cryptoProvider;
 @property (nonatomic, strong, readonly) NSRecursiveLock *lock;
 @end

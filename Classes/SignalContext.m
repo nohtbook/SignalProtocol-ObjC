@@ -34,8 +34,8 @@ static void signal_log(int level, const char *message, size_t len, void *user_da
         }
         
         // Setup crypto provider
-        _cryptoProvider = [[SignalCommonCryptoProvider alloc] init];
-        signal_crypto_provider cryptoProvider = [_cryptoProvider cryptoProvider];
+        SignalCommonCryptoProvider *myCryptoProvider = [[SignalCommonCryptoProvider alloc] init];
+        signal_crypto_provider cryptoProvider = [myCryptoProvider cryptoProvider];
         signal_context_set_crypto_provider(_context, &cryptoProvider);
         
         // Logs & Locking

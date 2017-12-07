@@ -14,8 +14,6 @@
 @synthesize publicKey = _publicKey;
 @synthesize privateKey = _privateKey;
 @synthesize ec_key_pair = _ec_key_pair;
-@synthesize ec_public_key = _ec_public_key;
-@synthesize ec_private_key = _ec_private_key;
 
 - (void) dealloc {
     if (_ec_key_pair) {

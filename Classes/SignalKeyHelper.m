@@ -73,28 +73,18 @@
 }
 
 - (SignalSignedPreKey*)generateSignedPreKeyWithIdentity:(SignalIdentityKeyPair*)identityKeyPair
-                                         signedPreKeyId:(uint32_t)signedPreKeyId
-                                              timestamp:(NSDate*)timestamp
-
-{
+                                         signedPreKeyId:(uint32_t)signedPreKeyId {
     NSParameterAssert(identityKeyPair);
     NSParameterAssert(identityKeyPair.identity_key_pair);
     if (!identityKeyPair || !identityKeyPair.identity_key_pair) { return nil; }
     session_signed_pre_key *signed_pre_key = NULL;
-    uint64_t unixTimestamp = [timestamp timeIntervalSince1970] * 1000;
+    uint64_t unixTimestamp = [[NSDate date] timeIntervalSince1970] * 1000;
     int result = signal_protocol_key_helper_generate_signed_pre_key(&signed_pre_key, identityKeyPair.identity_key_pair, signedPreKeyId, unixTimestamp, _context.context);
     if (result < 0 || !signed_pre_key) {
         return nil;
     }
     SignalSignedPreKey *signedPreKey = [[SignalSignedPreKey alloc] initWithSignedPreKey:signed_pre_key];
     return signedPreKey;
-}
-
-
-- (SignalSignedPreKey*)generateSignedPreKeyWithIdentity:(SignalIdentityKeyPair*)identityKeyPair
-                                         signedPreKeyId:(uint32_t)signedPreKeyId
-                                                   {
-    return [self generateSignedPreKeyWithIdentity:identityKeyPair signedPreKeyId:signedPreKeyId timestamp:[NSDate date]];
 }
 
 @end

@@ -106,11 +106,9 @@
 
     int result = 0;
     ec_public_key *signed_pre_key = 0;
-    ec_public_key *pre_key = 0;
 
     session_pre_key_bundle *bundle = _bundle;
     signed_pre_key = session_pre_key_bundle_get_signed_pre_key(bundle);
-    pre_key = session_pre_key_bundle_get_pre_key(bundle);
     
     if(signed_pre_key) {
         ec_public_key *identity_key = session_pre_key_bundle_get_identity_key(bundle);
