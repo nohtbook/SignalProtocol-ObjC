@@ -24,8 +24,8 @@
 - (instancetype)initWithIdentityKeyPair:(ratchet_identity_key_pair *)identity_key_pair {
     NSParameterAssert(identity_key_pair);
     if (!identity_key_pair) { return nil; }
-    ec_private_key *private = ratchet_identity_key_pair_get_private(identity_key_pair);
     ec_public_key *public = ratchet_identity_key_pair_get_public(identity_key_pair);
+    ec_private_key *private = ratchet_identity_key_pair_get_private(identity_key_pair);
     if (self = [super initWithECPublicKey:public ecPrivateKey:private]) {
         SIGNAL_REF(identity_key_pair);
         _identity_key_pair = identity_key_pair;

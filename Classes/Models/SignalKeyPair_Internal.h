@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** make sure to call SIGNAL_UNREF when you're done */
 + (nullable ec_public_key *)publicKeyFromData:(NSData *)data error:(NSError **)error;
++ (nullable ec_private_key *)privateKeyFromData:(NSData *)data error:(NSError **)error;
 
 @end
 

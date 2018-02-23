@@ -90,6 +90,20 @@
     return public;
 }
 
++ (nullable ec_private_key *)privateKeyFromData:(NSData *)data error:(NSError **)error {
+    NSParameterAssert(data);
+    if (!data) { return nil; }
+    ec_private_key *private = NULL;
+    int result = curve_decode_private_point(&private, data.bytes, data.length, NULL);
+    if (result < 0 || !private) {
+        if (error) {
+            *error = ErrorFromSignalErrorCode(result);
+        }
+        return nil;
+    }
+    return private;
+}
+
 - (nullable instancetype)initWithPublicKey:(NSData *)publicKey
                                 privateKey:(NSData *)privateKey
                                      error:(NSError **)error {
@@ -102,19 +116,12 @@
         return nil;
     }
     ec_public_key *public = [[self class] publicKeyFromData:publicKey error:error];
-    if (!public) {
-        return nil;
-    }
-    _ec_public_key = public;
-    int result = curve_decode_private_point(&_ec_private_key, privateKey.bytes, privateKey.length, NULL);
-    NSAssert(result >= 0, @"couldnt decode private key");
-    if (result < 0 || !_ec_private_key) {
-        if (error) {
-            *error = ErrorFromSignalErrorCode(result);
-        }
-        return nil;
-    }
+    if (!public) { return nil; }
+    ec_private_key *private = [[self class] privateKeyFromData:privateKey error:error];
+    if (!private) { return nil; }
     if (self = [super init]) {
+        _ec_public_key = public;
+        _ec_private_key = private;
         _publicKey = publicKey;
         _privateKey = privateKey;
     }
