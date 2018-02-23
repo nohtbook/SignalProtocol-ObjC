@@ -119,6 +119,20 @@
     if (!public) { return nil; }
     ec_private_key *private = [[self class] privateKeyFromData:privateKey error:error];
     if (!private) { return nil; }
+    ec_public_key *public2 = 0;
+    int result = curve_generate_public_key(&public2, private);
+    if (result < 0 || !public2) {
+        if (error) {
+            *error = ErrorFromSignalErrorCode(result);
+        }
+        return nil;
+    }
+    if (ec_public_key_compare(public, public2) != 0) {
+        if (error) {
+            *error = ErrorFromSignalErrorCode(SignalErrorInvalidKey);
+        }
+        return nil;
+    }
     if (self = [super init]) {
         _ec_public_key = public;
         _ec_private_key = private;
