@@ -7,6 +7,8 @@
 
 @interface SignalSessionBuilder ()
 @property (readonly, nonatomic) session_builder *builder;
+@property (readonly, nonatomic) SignalAddress *address;
+@property (readonly, nonatomic) SignalContext *context;
 @end
 
 @implementation SignalSessionBuilder

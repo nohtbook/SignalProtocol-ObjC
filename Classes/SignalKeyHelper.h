@@ -8,8 +8,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalKeyHelper : NSObject
 
-@property (readonly, nonatomic) SignalContext *context;
-
 - (nullable instancetype)initWithContext:(SignalContext *)context;
 
 /**

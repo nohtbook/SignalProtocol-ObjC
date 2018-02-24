@@ -4,6 +4,10 @@
 #import "SignalPreKey_Internal.h"
 #import "SignalSignedPreKey_Internal.h"
 
+@interface SignalKeyHelper ()
+@property (readonly, nonatomic) SignalContext *context;
+@end
+
 @implementation SignalKeyHelper
 
 - (instancetype)initWithContext:(SignalContext *)context {

@@ -6,6 +6,10 @@ static void signal_lock(void *user_data);
 static void signal_unlock(void *user_data);
 static void signal_log(int level, const char *message, size_t len, void *user_data);
 
+@interface SignalContext ()
+@property (readonly, nonatomic) NSRecursiveLock *lock;
+@end
+
 @implementation SignalContext
 
 - (void)dealloc {

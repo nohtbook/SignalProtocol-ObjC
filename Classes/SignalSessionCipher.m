@@ -8,6 +8,8 @@
 
 @interface SignalSessionCipher ()
 @property (readonly, nonatomic) session_cipher *cipher;
+@property (readonly, nonatomic) SignalAddress *address;
+@property (readonly, nonatomic) SignalContext *context;
 @end
 
 @implementation SignalSessionCipher

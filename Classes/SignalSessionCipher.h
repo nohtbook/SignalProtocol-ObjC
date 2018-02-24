@@ -7,9 +7,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalSessionCipher : NSObject
 
-@property (readonly, nonatomic) SignalAddress *address;
-@property (readonly, nonatomic) SignalContext *context;
-
 - (instancetype)initWithAddress:(SignalAddress *)address context:(SignalContext *)context;
 
 - (nullable SignalCiphertext *)encryptData:(NSData *)data error:(NSError **)error;
