@@ -66,17 +66,17 @@
     }
     SignalMessage *message = nil;
     SignalPreKeyMessage *preKeyMessage = nil;
-    if (ciphertext.type == SignalCiphertextTypePreKeyMessage) {
-        preKeyMessage = [[SignalPreKeyMessage alloc] initWithData:ciphertext.data context:_context error:error];
-        if (!preKeyMessage) { return nil; }
-    } else if (ciphertext.type == SignalCiphertextTypeMessage) {
+    if (ciphertext.type == SignalCiphertextTypeMessage) {
         message = [[SignalMessage alloc] initWithData:ciphertext.data context:_context error:error];
         if (!message) { return nil; }
+    } else if (ciphertext.type == SignalCiphertextTypePreKeyMessage) {
+        preKeyMessage = [[SignalPreKeyMessage alloc] initWithData:ciphertext.data context:_context error:error];
+        if (!preKeyMessage) { return nil; }
     } else {
         // Fall back to brute force type detection...
-        preKeyMessage = [[SignalPreKeyMessage alloc] initWithData:ciphertext.data context:_context error:error];
         message = [[SignalMessage alloc] initWithData:ciphertext.data context:_context error:error];
-        if (!preKeyMessage && !message) {
+        preKeyMessage = [[SignalPreKeyMessage alloc] initWithData:ciphertext.data context:_context error:error];
+        if (!message && !preKeyMessage) {
             if (error) {
                 if (!*error) {
                     *error = ErrorFromSignalError(SignalErrorInvalidArgument);
