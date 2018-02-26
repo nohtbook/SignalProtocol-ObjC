@@ -123,34 +123,31 @@ static void sha512_digest_cleanup_func(void *digest_context, void *user_data) {
  * @return 0 on success, negative on failure
  */
 static int encrypt_func(signal_buffer **output,
-                           int cipher,
-                           const uint8_t *key, size_t key_len,
-                           const uint8_t *iv, size_t iv_len,
-                           const uint8_t *plaintext, size_t plaintext_len,
-                           void *user_data) {
+                        int cipher,
+                        const uint8_t *key, size_t key_len,
+                        const uint8_t *iv, size_t iv_len,
+                        const uint8_t *plaintext, size_t plaintext_len,
+                        void *user_data) {
     // We only support Version 3
     if (cipher != SG_CIPHER_AES_CBC_PKCS5) {
         return SG_ERR_INVAL;
     }
-    size_t outLength;
-    NSMutableData *
-    cipherData = [NSMutableData dataWithLength:plaintext_len +
-                  kCCBlockSizeAES128];
+    NSMutableData *cipherData = [NSMutableData dataWithLength:plaintext_len+kCCBlockSizeAES128];
     if (!cipherData) {
         return SG_ERR_NOMEM;
     }
-    CCCryptorStatus
-    result = CCCrypt(kCCEncrypt, // operation
-                     kCCAlgorithmAES, // Algorithm
-                     kCCOptionPKCS7Padding, // options
-                     key, // key
-                     key_len, // keylength
-                     iv,// iv
-                     plaintext, // dataIn
-                     plaintext_len, // dataInLength,
-                     cipherData.mutableBytes, // dataOut
-                     cipherData.length, // dataOutAvailable
-                     &outLength); // dataOutMoved
+    size_t outLength;
+    CCCryptorStatus result = CCCrypt(kCCEncrypt, // operation
+                                     kCCAlgorithmAES, // algorithm
+                                     kCCOptionPKCS7Padding, // options
+                                     key, // key
+                                     key_len, // keylength
+                                     iv, // iv
+                                     plaintext, // dataIn
+                                     plaintext_len, // dataInLength,
+                                     cipherData.mutableBytes, // dataOut
+                                     cipherData.length, // dataOutAvailable
+                                     &outLength); // dataOutMoved
     if (result == kCCSuccess) {
         cipherData.length = outLength;
     } else {
@@ -178,29 +175,26 @@ static int encrypt_func(signal_buffer **output,
  * @return 0 on success, negative on failure
  */
 static int decrypt_func(signal_buffer **output,
-                    int cipher,
-                    const uint8_t *key, size_t key_len,
-                    const uint8_t *iv, size_t iv_len,
-                    const uint8_t *ciphertext, size_t ciphertext_len,
-                    void *user_data) {
+                        int cipher,
+                        const uint8_t *key, size_t key_len,
+                        const uint8_t *iv, size_t iv_len,
+                        const uint8_t *ciphertext, size_t ciphertext_len,
+                        void *user_data) {
     // We only support Version 3
     if (cipher != SG_CIPHER_AES_CBC_PKCS5) {
         return SG_ERR_INVAL;
     }
-    size_t outLength;
-    NSMutableData *
-    outData = [NSMutableData dataWithLength:ciphertext_len +
-                  kCCBlockSizeAES128];
+    NSMutableData *outData = [NSMutableData dataWithLength:ciphertext_len+kCCBlockSizeAES128];
     if (!outData) {
         return SG_ERR_NOMEM;
     }
-    CCCryptorStatus
-    result = CCCrypt(kCCDecrypt, // operation
-                     kCCAlgorithmAES, // Algorithm
+    size_t outLength;
+    CCCryptorStatus result = CCCrypt(kCCDecrypt, // operation
+                     kCCAlgorithmAES, // algorithm
                      kCCOptionPKCS7Padding, // options
                      key, // key
                      key_len, // keylength
-                     iv,// iv
+                     iv, // iv
                      ciphertext, // dataIn
                      ciphertext_len, // dataInLength,
                      outData.mutableBytes, // dataOut
