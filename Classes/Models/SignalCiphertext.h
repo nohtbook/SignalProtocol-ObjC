@@ -10,8 +10,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalCiphertext : NSObject
 
-@property (nonatomic, readonly) SignalCiphertextType type;
-@property (nonatomic, strong, readonly) NSData *data;
+@property (readonly, nonatomic) SignalCiphertextType type;
+@property (readonly, nonatomic) NSData *data;
 
 - (instancetype) initWithData:(NSData*)data
                          type:(SignalCiphertextType)type;

@@ -4,8 +4,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalKeyPair : NSObject <NSSecureCoding>
 
-@property (nonatomic, strong, readonly) NSData *publicKey;
-@property (nonatomic, strong, readonly) NSData *privateKey;
+@property (readonly, nonatomic) NSData *publicKey;
+@property (readonly, nonatomic) NSData *privateKey;
 
 - (nullable instancetype) initWithPublicKey:(NSData*)publicKey
                                  privateKey:(NSData*)privateKey

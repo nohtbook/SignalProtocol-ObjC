@@ -6,7 +6,7 @@
 #import "SignalStorage_Internal.h"
 
 @interface SignalSessionBuilder()
-@property (nonatomic, readonly) session_builder *builder;
+@property (readonly, nonatomic) session_builder *builder;
 @end
 
 @implementation SignalSessionBuilder

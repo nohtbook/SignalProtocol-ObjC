@@ -5,7 +5,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalAddress ()
 
-@property (nonatomic, readonly) signal_protocol_address *address;
+@property (readonly, nonatomic) signal_protocol_address *address;
 
 - (nullable instancetype) initWithAddress:(nonnull const signal_protocol_address*)address;
 

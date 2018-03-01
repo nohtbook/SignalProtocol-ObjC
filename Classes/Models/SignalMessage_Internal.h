@@ -5,7 +5,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalMessage ()
 
-@property (nonatomic, readonly) signal_message *signal_message;
+@property (readonly, nonatomic) signal_message *signal_message;
 
 @end
 

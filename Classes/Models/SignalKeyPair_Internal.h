@@ -5,9 +5,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalKeyPair ()
 
-@property (nonatomic, readonly) ec_key_pair *ec_key_pair;
-@property (nonatomic, readonly) ec_public_key* ec_public_key;
-@property (nonatomic, readonly) ec_private_key* ec_private_key;
+@property (readonly, nonatomic) ec_key_pair *ec_key_pair;
+@property (readonly, nonatomic) ec_public_key* ec_public_key;
+@property (readonly, nonatomic) ec_private_key* ec_private_key;
 
 - (nullable instancetype) initWithECKeyPair:(ec_key_pair*)ec_key_pair;
 - (nullable instancetype) initWithECPublicKey:(ec_public_key*)ec_public_key

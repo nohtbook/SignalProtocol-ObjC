@@ -7,7 +7,7 @@
 #import "SignalStorage_Internal.h"
 
 @interface SignalSessionCipher ()
-@property (nonatomic, readonly) session_cipher *cipher;
+@property (readonly, nonatomic) session_cipher *cipher;
 @end
 
 @implementation SignalSessionCipher

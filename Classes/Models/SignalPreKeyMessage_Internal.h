@@ -3,6 +3,6 @@
 
 @interface SignalPreKeyMessage ()
 
-@property (nonatomic, readonly) pre_key_signal_message *pre_key_signal_message;
+@property (readonly, nonatomic) pre_key_signal_message *pre_key_signal_message;
 
 @end

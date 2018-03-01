@@ -3,12 +3,12 @@
 
 @interface SignalStorage ()
 
-@property (nonatomic, strong, readonly) id<SignalSessionStore> sessionStore;
-@property (nonatomic, strong, readonly) id<SignalPreKeyStore> preKeyStore;
-@property (nonatomic, strong, readonly) id<SignalSignedPreKeyStore> signedPreKeyStore;
-@property (nonatomic, strong, readonly) id<SignalIdentityKeyStore> identityKeyStore;
-@property (nonatomic, strong, readonly) id<SignalSenderKeyStore> senderKeyStore;
-@property (nonatomic, readonly) signal_protocol_store_context *storeContext;
+@property (readonly, nonatomic) id<SignalSessionStore> sessionStore;
+@property (readonly, nonatomic) id<SignalPreKeyStore> preKeyStore;
+@property (readonly, nonatomic) id<SignalSignedPreKeyStore> signedPreKeyStore;
+@property (readonly, nonatomic) id<SignalIdentityKeyStore> identityKeyStore;
+@property (readonly, nonatomic) id<SignalSenderKeyStore> senderKeyStore;
+@property (readonly, nonatomic) signal_protocol_store_context *storeContext;
 
 - (void) setupWithContext:(signal_context*)context;
 

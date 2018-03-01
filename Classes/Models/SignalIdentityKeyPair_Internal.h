@@ -5,7 +5,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalIdentityKeyPair ()
 
-@property (nonatomic, readonly) ratchet_identity_key_pair *identity_key_pair;
+@property (readonly, nonatomic) ratchet_identity_key_pair *identity_key_pair;
 
 - (instancetype) initWithIdentityKeyPair:(ratchet_identity_key_pair*)identity_key_pair;
 

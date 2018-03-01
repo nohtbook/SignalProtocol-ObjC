@@ -3,6 +3,6 @@
 
 @interface SignalPreKeyBundle ()
 
-@property (nonatomic, readonly) session_pre_key_bundle *bundle;
+@property (readonly, nonatomic) session_pre_key_bundle *bundle;
 
 @end
