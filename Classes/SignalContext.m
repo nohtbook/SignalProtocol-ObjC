@@ -33,7 +33,6 @@ static void signal_log(int level, const char *message, size_t len, void *user_da
         signal_context_set_locking_functions(_context, signal_lock, signal_unlock);
         signal_context_set_log_function(_context, signal_log);
 
-        
         // Storage
         _storage = storage;
         [_storage setupWithContext:_context];

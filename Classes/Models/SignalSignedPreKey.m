@@ -75,7 +75,6 @@
         }
     }
     return self;
-    
 }
 
 #pragma mark NSSecureCoding

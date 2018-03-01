@@ -1,6 +1,7 @@
 @import Foundation;
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface SignalAddress : NSObject
 
 @property (nonatomic, strong, readonly) NSString *name;
@@ -10,4 +11,5 @@ NS_ASSUME_NONNULL_BEGIN
                      deviceId:(int32_t)deviceId;
 
 @end
+
 NS_ASSUME_NONNULL_END

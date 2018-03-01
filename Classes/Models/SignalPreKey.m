@@ -77,5 +77,4 @@
     [aCoder encodeObject:self.serializedData forKey:@"data"];
 }
 
-
 @end

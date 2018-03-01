@@ -7,6 +7,7 @@ typedef NS_ENUM(NSInteger, SignalCiphertextType) {
 };
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface SignalCiphertext : NSObject
 
 @property (nonatomic, readonly) SignalCiphertextType type;
@@ -16,4 +17,5 @@ NS_ASSUME_NONNULL_BEGIN
                          type:(SignalCiphertextType)type;
 
 @end
+
 NS_ASSUME_NONNULL_END

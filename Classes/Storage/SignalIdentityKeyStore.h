@@ -2,8 +2,8 @@
 #import "SignalAddress.h"
 #import "SignalIdentityKeyPair.h"
 
-
 NS_ASSUME_NONNULL_BEGIN
+
 @protocol SignalIdentityKeyStore <NSObject>
 
 @required
@@ -46,4 +46,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL) isTrustedIdentity:(SignalAddress*)address identityKey:(NSData*)identityKey;
 
 @end
+
 NS_ASSUME_NONNULL_END

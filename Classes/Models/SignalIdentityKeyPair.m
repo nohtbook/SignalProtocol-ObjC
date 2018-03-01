@@ -2,6 +2,7 @@
 #import "SignalKeyPair_Internal.h"
 
 @implementation SignalIdentityKeyPair
+
 @synthesize identity_key_pair = _identity_key_pair;
 
 - (void) dealloc {
@@ -19,7 +20,6 @@
     }
     return _identity_key_pair;
 }
-
 
 - (instancetype) initWithIdentityKeyPair:(ratchet_identity_key_pair*)identity_key_pair {
     NSParameterAssert(identity_key_pair);

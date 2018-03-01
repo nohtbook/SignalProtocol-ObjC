@@ -4,6 +4,7 @@
 #import "SignalPreKeyBundle.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface SignalSessionBuilder : NSObject
 
 @property (nonatomic, strong, readonly) SignalAddress *address;
@@ -15,4 +16,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL) processPreKeyBundle:(SignalPreKeyBundle*)preKeyBundle error:(NSError**)error;
 
 @end
+
 NS_ASSUME_NONNULL_END

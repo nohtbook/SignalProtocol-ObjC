@@ -2,6 +2,7 @@
 #import "SignalStorage.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface SignalContext : NSObject
 
 @property (nonatomic, strong, readonly) SignalStorage *storage;
@@ -9,4 +10,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable instancetype) initWithStorage:(SignalStorage*)storage;
 
 @end
+
 NS_ASSUME_NONNULL_END

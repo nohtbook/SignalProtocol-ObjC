@@ -1,6 +1,7 @@
 @import Foundation;
 
 NS_ASSUME_NONNULL_BEGIN
+
 @protocol SignalPreKeyStore <NSObject>
 
 @required
@@ -29,4 +30,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL) deletePreKeyWithId:(uint32_t)preKeyId;
 
 @end
+
 NS_ASSUME_NONNULL_END

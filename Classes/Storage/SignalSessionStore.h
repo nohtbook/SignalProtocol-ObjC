@@ -2,6 +2,7 @@
 #import "SignalAddress.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
 @protocol SignalSessionStore <NSObject>
 
 @required
@@ -45,4 +46,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (int) deleteAllSessionsForAddressName:(NSString*)addressName;
 
 @end
+
 NS_ASSUME_NONNULL_END

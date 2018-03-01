@@ -12,8 +12,6 @@
 
 @implementation SignalSessionCipher
 
-
-
 - (instancetype) initWithAddress:(SignalAddress*)address
                          context:(SignalContext*)context {
     NSParameterAssert(address);
@@ -88,7 +86,6 @@
             return nil;
         }
     }
-    
     signal_buffer *buffer = NULL;
     int result = SG_ERR_UNKNOWN;
     if (message) {

@@ -2,6 +2,7 @@
 #import "SignalError.h"
 
 @implementation SignalKeyPair
+
 @synthesize publicKey = _publicKey;
 @synthesize privateKey = _privateKey;
 @synthesize ec_key_pair = _ec_key_pair;
@@ -113,7 +114,6 @@
         }
         return nil;
     }
-    
     if (self = [super init]) {
         _publicKey = publicKey;
         _privateKey = privateKey;

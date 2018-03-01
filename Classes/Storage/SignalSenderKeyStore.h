@@ -2,6 +2,7 @@
 #import "SignalAddress.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
 @protocol SignalSenderKeyStore <NSObject>
 
 @required
@@ -19,4 +20,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable NSData*) loadSenderKeyForAddress:(SignalAddress*)address groupId:(NSString*)groupId;
 
 @end
+
 NS_ASSUME_NONNULL_END

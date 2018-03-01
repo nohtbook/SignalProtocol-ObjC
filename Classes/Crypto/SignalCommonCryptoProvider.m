@@ -132,7 +132,6 @@ static int encrypt_func(signal_buffer **output,
     if (cipher != SG_CIPHER_AES_CBC_PKCS5) {
         return SG_ERR_INVAL;
     }
-    
     size_t outLength;
     NSMutableData *
     cipherData = [NSMutableData dataWithLength:plaintext_len +
@@ -140,7 +139,6 @@ static int encrypt_func(signal_buffer **output,
     if (!cipherData) {
         return SG_ERR_NOMEM;
     }
-    
     CCCryptorStatus
     result = CCCrypt(kCCEncrypt, // operation
                      kCCAlgorithmAES, // Algorithm
@@ -153,7 +151,6 @@ static int encrypt_func(signal_buffer **output,
                      cipherData.mutableBytes, // dataOut
                      cipherData.length, // dataOutAvailable
                      &outLength); // dataOutMoved
-    
     if (result == kCCSuccess) {
         cipherData.length = outLength;
     } else {
@@ -190,7 +187,6 @@ static int decrypt_func(signal_buffer **output,
     if (cipher != SG_CIPHER_AES_CBC_PKCS5) {
         return SG_ERR_INVAL;
     }
-    
     size_t outLength;
     NSMutableData *
     outData = [NSMutableData dataWithLength:ciphertext_len +
@@ -198,7 +194,6 @@ static int decrypt_func(signal_buffer **output,
     if (!outData) {
         return SG_ERR_NOMEM;
     }
-    
     CCCryptorStatus
     result = CCCrypt(kCCDecrypt, // operation
                      kCCAlgorithmAES, // Algorithm
@@ -211,7 +206,6 @@ static int decrypt_func(signal_buffer **output,
                      outData.mutableBytes, // dataOut
                      outData.length, // dataOutAvailable
                      &outLength); // dataOutMoved
-    
     if (result == kCCSuccess) {
         outData.length = outLength;
     } else {
@@ -243,4 +237,5 @@ static int decrypt_func(signal_buffer **output,
     cryptoProvider.user_data = (__bridge void *)(self);
     return cryptoProvider;
 }
+
 @end

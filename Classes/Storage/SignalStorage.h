@@ -9,6 +9,7 @@
 @end
 
 NS_ASSUME_NONNULL_BEGIN
+
 @interface SignalStorage : NSObject
 
 - (instancetype) initWithSignalStore:(id<SignalStore>)signalStore;
@@ -20,4 +21,5 @@ NS_ASSUME_NONNULL_BEGIN
                        senderKeyStore:(id<SignalSenderKeyStore>)senderKeyStore;
 
 @end
+
 NS_ASSUME_NONNULL_END
