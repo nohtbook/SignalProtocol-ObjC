@@ -6,5 +6,3 @@
 - (signal_crypto_provider) cryptoProvider;
 
 @end
-
-
