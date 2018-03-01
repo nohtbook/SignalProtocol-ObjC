@@ -5,9 +5,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalMessage : NSObject
 
-- (nullable instancetype) initWithData:(NSData*)data
-                               context:(SignalContext*)context
-                                 error:(NSError**)error;
+- (nullable instancetype)initWithData:(NSData *)data
+                              context:(SignalContext *)context
+                                error:(NSError **)error;
 
 @end
 

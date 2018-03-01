@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) session_signed_pre_key *signed_pre_key;
 
-- (instancetype) initWithSignedPreKey:(session_signed_pre_key*)signed_pre_key;
+- (instancetype)initWithSignedPreKey:(session_signed_pre_key *)signed_pre_key;
 
 @end
 

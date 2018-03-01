@@ -13,15 +13,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) NSData *signature;
 @property (readonly, nonatomic) NSData *identityKey;
 
-- (nullable instancetype) initWithRegistrationId:(uint32_t)registrationId
-                               deviceId:(uint32_t)deviceId
-                               preKeyId:(uint32_t)preKeyId
-                           preKeyPublic:(NSData*)preKeyPublic
-                         signedPreKeyId:(uint32_t)signedPreKeyId
-                     signedPreKeyPublic:(NSData*)signedPreKeyPublic
-                              signature:(NSData*)signature
-                            identityKey:(NSData*)identityKey
-                                  error:(NSError* __autoreleasing *)error;
+- (nullable instancetype)initWithRegistrationId:(uint32_t)registrationId
+                                       deviceId:(uint32_t)deviceId
+                                       preKeyId:(uint32_t)preKeyId
+                                   preKeyPublic:(NSData *)preKeyPublic
+                                 signedPreKeyId:(uint32_t)signedPreKeyId
+                             signedPreKeyPublic:(NSData *)signedPreKeyPublic
+                                      signature:(NSData *)signature
+                                    identityKey:(NSData *)identityKey
+                                          error:(NSError * __autoreleasing *)error;
 
 @end
 

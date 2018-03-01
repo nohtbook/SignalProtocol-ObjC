@@ -12,13 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SignalStorage : NSObject
 
-- (instancetype) initWithSignalStore:(id<SignalStore>)signalStore;
+- (instancetype)initWithSignalStore:(id<SignalStore>)signalStore;
 
-- (instancetype) initWithSessionStore:(id<SignalSessionStore>)sessionStore
-                          preKeyStore:(id<SignalPreKeyStore>)preKeyStore
-                    signedPreKeyStore:(id<SignalSignedPreKeyStore>)signedPreKeyStore
-                     identityKeyStore:(id<SignalIdentityKeyStore>)identityKeyStore
-                       senderKeyStore:(id<SignalSenderKeyStore>)senderKeyStore;
+- (instancetype)initWithSessionStore:(id<SignalSessionStore>)sessionStore
+                         preKeyStore:(id<SignalPreKeyStore>)preKeyStore
+                   signedPreKeyStore:(id<SignalSignedPreKeyStore>)signedPreKeyStore
+                    identityKeyStore:(id<SignalIdentityKeyStore>)identityKeyStore
+                      senderKeyStore:(id<SignalSenderKeyStore>)senderKeyStore;
 
 @end
 

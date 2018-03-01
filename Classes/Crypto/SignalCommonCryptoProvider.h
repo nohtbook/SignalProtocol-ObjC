@@ -3,6 +3,6 @@
 
 @interface SignalCommonCryptoProvider : NSObject
 
-- (signal_crypto_provider) cryptoProvider;
+- (signal_crypto_provider)cryptoProvider;
 
 @end

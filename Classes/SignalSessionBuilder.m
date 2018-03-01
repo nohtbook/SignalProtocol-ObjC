@@ -5,21 +5,20 @@
 #import "SignalPreKeyBundle_Internal.h"
 #import "SignalStorage_Internal.h"
 
-@interface SignalSessionBuilder()
+@interface SignalSessionBuilder ()
 @property (readonly, nonatomic) session_builder *builder;
 @end
 
 @implementation SignalSessionBuilder
 
-- (void) dealloc {
+- (void)dealloc {
     if (_builder) {
         session_builder_free(_builder);
     }
     _builder = NULL;
 }
 
-- (instancetype) initWithAddress:(SignalAddress*)address
-                         context:(SignalContext*)context {
+- (instancetype)initWithAddress:(SignalAddress *)address context:(SignalContext *)context {
     NSParameterAssert(address);
     NSParameterAssert(context);
     if (!address || !context) { return nil; }
@@ -35,7 +34,7 @@
     return self;
 }
 
-- (BOOL) processPreKeyBundle:(SignalPreKeyBundle*)preKeyBundle error:(NSError**)error {
+- (BOOL)processPreKeyBundle:(SignalPreKeyBundle *)preKeyBundle error:(NSError **)error {
     NSParameterAssert(preKeyBundle);
     if (!preKeyBundle) {
         if (error) {

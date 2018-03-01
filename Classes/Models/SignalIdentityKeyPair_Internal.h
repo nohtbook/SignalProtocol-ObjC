@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) ratchet_identity_key_pair *identity_key_pair;
 
-- (instancetype) initWithIdentityKeyPair:(ratchet_identity_key_pair*)identity_key_pair;
+- (instancetype)initWithIdentityKeyPair:(ratchet_identity_key_pair *)identity_key_pair;
 
 @end
 

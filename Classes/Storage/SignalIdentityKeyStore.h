@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Get the local client's identity key pair.
  */
-- (SignalIdentityKeyPair*) getIdentityKeyPair;
+- (SignalIdentityKeyPair *)getIdentityKeyPair;
 
 /**
  * Return the local client's registration ID.
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  * return negative on failure
  */
-- (uint32_t) getLocalRegistrationId;
+- (uint32_t)getLocalRegistrationId;
 
 /**
  * Save a remote client's identity key
@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  * from the identity store, but retain any metadata that may be kept
  * alongside it.
  */
-- (BOOL) saveIdentity:(SignalAddress*)address identityKey:(nullable NSData*)identityKey;
+- (BOOL)saveIdentity:(SignalAddress *)address identityKey:(nullable NSData *)identityKey;
 
 /**
  * Verify a remote client's identity key.
@@ -43,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  * store.  Only if it mismatches an entry in the local store is it considered
  * 'untrusted.'
  */
-- (BOOL) isTrustedIdentity:(SignalAddress*)address identityKey:(NSData*)identityKey;
+- (BOOL)isTrustedIdentity:(SignalAddress *)address identityKey:(NSData *)identityKey;
 
 @end
 

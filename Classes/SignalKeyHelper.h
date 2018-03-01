@@ -10,19 +10,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) SignalContext *context;
 
-- (nullable instancetype) initWithContext:(SignalContext*)context;
+- (nullable instancetype)initWithContext:(SignalContext *)context;
 
 /**
  * Generate an identity key pair.  Clients should only do this once,
  * at install time.
  */
-- (nullable SignalIdentityKeyPair*) generateIdentityKeyPair;
+- (nullable SignalIdentityKeyPair *)generateIdentityKeyPair;
 
 /**
  * Generate a registration ID.  Clients should only do this once,
  * at install time. If result is 0, there was an error.
  */
-- (uint32_t) generateRegistrationId;
+- (uint32_t)generateRegistrationId;
 
 /**
  * Generate a list of PreKeys.  Clients should do this at install time, and
@@ -32,20 +32,20 @@ NS_ASSUME_NONNULL_BEGIN
  * store pre keys in a circular buffer, so that they are repeated as infrequently
  * as possible.
  */
-- (NSArray<SignalPreKey*>*)generatePreKeysWithStartingPreKeyId:(NSUInteger)startingPreKeyId
-                                                         count:(NSUInteger)count;
+- (NSArray<SignalPreKey *> *)generatePreKeysWithStartingPreKeyId:(NSUInteger)startingPreKeyId
+                                                           count:(NSUInteger)count;
 
 /**
  * Generate the last resort pre key.  Clients should do this only once, at
  * install time, and durably store it for the length of the install.
  */
-- (nullable SignalPreKey*)generateLastResortPreKey;
+- (nullable SignalPreKey *)generateLastResortPreKey;
 
 /**
  * Generate a signed pre key
  */
-- (nullable SignalSignedPreKey*)generateSignedPreKeyWithIdentity:(SignalIdentityKeyPair*)identityKeyPair
-                                                  signedPreKeyId:(uint32_t)signedPreKeyId;
+- (nullable SignalSignedPreKey *)generateSignedPreKeyWithIdentity:(SignalIdentityKeyPair *)identityKeyPair
+                                                   signedPreKeyId:(uint32_t)signedPreKeyId;
 
 @end
 

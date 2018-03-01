@@ -8,14 +8,14 @@ static void signal_log(int level, const char *message, size_t len, void *user_da
 
 @implementation SignalContext
 
-- (void) dealloc {
+- (void)dealloc {
     if (_context) {
         signal_context_destroy(_context);
     }
     _context = NULL;
 }
 
-- (instancetype) initWithStorage:(SignalStorage *)storage {
+- (instancetype)initWithStorage:(SignalStorage *)storage {
     NSParameterAssert(storage);
     if (self = [super init]) {
         int result = signal_context_create(&_context, (__bridge void *)(self));

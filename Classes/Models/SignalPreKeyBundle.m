@@ -4,21 +4,21 @@
 
 @implementation SignalPreKeyBundle
 
-- (void) dealloc {
+- (void)dealloc {
     if (_bundle) {
         SIGNAL_UNREF(_bundle);
     }
 }
 
-- (nullable instancetype) initWithRegistrationId:(uint32_t)registrationId
-                               deviceId:(uint32_t)deviceId
-                               preKeyId:(uint32_t)preKeyId
-                           preKeyPublic:(NSData*)preKeyPublic
-                         signedPreKeyId:(uint32_t)signedPreKeyId
-                     signedPreKeyPublic:(NSData*)signedPreKeyPublic
-                              signature:(NSData*)signature
-                            identityKey:(NSData*)identityKey
-                                  error:(NSError* __autoreleasing *)error {
+- (nullable instancetype)initWithRegistrationId:(uint32_t)registrationId
+                                       deviceId:(uint32_t)deviceId
+                                       preKeyId:(uint32_t)preKeyId
+                                   preKeyPublic:(NSData *)preKeyPublic
+                                 signedPreKeyId:(uint32_t)signedPreKeyId
+                             signedPreKeyPublic:(NSData *)signedPreKeyPublic
+                                      signature:(NSData *)signature
+                                    identityKey:(NSData *)identityKey
+                                          error:(NSError * __autoreleasing *)error {
     NSParameterAssert(preKeyPublic);
     NSParameterAssert(signedPreKeyPublic);
     NSParameterAssert(signature);
@@ -79,7 +79,7 @@
 }
 
 /** This will do a rough check if bundle is considered valid */
-- (BOOL) checkValidity:(NSError * __autoreleasing *)error {
+- (BOOL)checkValidity:(NSError * __autoreleasing *)error {
     // session_builder.c:191
     // int session_builder_process_pre_key_bundle(session_builder *builder, session_pre_key_bundle *bundle)
     BOOL (^handleResult)(int result) = ^BOOL(int result) {

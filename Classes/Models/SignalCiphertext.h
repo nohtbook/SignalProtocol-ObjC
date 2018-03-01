@@ -13,8 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) SignalCiphertextType type;
 @property (readonly, nonatomic) NSData *data;
 
-- (instancetype) initWithData:(NSData*)data
-                         type:(SignalCiphertextType)type;
+- (instancetype)initWithData:(NSData *)data type:(SignalCiphertextType)type;
 
 @end
 

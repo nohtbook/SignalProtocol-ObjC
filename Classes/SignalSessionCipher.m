@@ -12,8 +12,7 @@
 
 @implementation SignalSessionCipher
 
-- (instancetype) initWithAddress:(SignalAddress*)address
-                         context:(SignalContext*)context {
+- (instancetype)initWithAddress:(SignalAddress *)address context:(SignalContext *)context {
     NSParameterAssert(address);
     NSParameterAssert(context);
     if (!address || !context) { return nil; }
@@ -29,7 +28,7 @@
     return self;
 }
 
-- (nullable SignalCiphertext*)encryptData:(NSData*)data error:(NSError**)error {
+- (nullable SignalCiphertext *)encryptData:(NSData *)data error:(NSError **)error {
     NSParameterAssert(data);
     if (!data) {
         if (error) {
@@ -57,7 +56,7 @@
     return encrypted;
 }
 
-- (nullable NSData*)decryptCiphertext:(SignalCiphertext*)ciphertext error:(NSError**)error {
+- (nullable NSData *)decryptCiphertext:(SignalCiphertext *)ciphertext error:(NSError **)error {
     NSParameterAssert(ciphertext && ciphertext.data);
     if (!ciphertext || !ciphertext.data) {
         if (error) {

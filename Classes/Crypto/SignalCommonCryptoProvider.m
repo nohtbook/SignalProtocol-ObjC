@@ -221,7 +221,7 @@ static int decrypt_func(signal_buffer **output,
 
 @implementation SignalCommonCryptoProvider
 
-- (signal_crypto_provider) cryptoProvider {
+- (signal_crypto_provider)cryptoProvider {
     signal_crypto_provider cryptoProvider;
     cryptoProvider.random_func = random_func;
     cryptoProvider.hmac_sha256_init_func = hmac_sha256_init_func;

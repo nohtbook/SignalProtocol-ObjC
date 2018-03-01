@@ -7,7 +7,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (readonly, nonatomic) signal_protocol_address *address;
 
-- (nullable instancetype) initWithAddress:(nonnull const signal_protocol_address*)address;
+- (nullable instancetype)initWithAddress:(nonnull const signal_protocol_address *)address;
 
 @end
 

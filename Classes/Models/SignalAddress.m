@@ -2,13 +2,13 @@
 
 @implementation SignalAddress
 
-- (void) dealloc {
+- (void)dealloc {
     if (_address) {
         free(_address);
     }
 }
 
-- (instancetype) initWithName:(NSString *)name deviceId:(int32_t)deviceId {
+- (instancetype)initWithName:(NSString *)name deviceId:(int32_t)deviceId {
     NSParameterAssert(name);
     if (!name) {
         return nil;
@@ -24,7 +24,7 @@
     return self;
 }
 
-- (instancetype) initWithAddress:(const signal_protocol_address*)address {
+- (instancetype)initWithAddress:(const signal_protocol_address *)address {
     NSParameterAssert(address);
     NSParameterAssert(address->name);
     if (!address) {

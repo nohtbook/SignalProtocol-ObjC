@@ -10,11 +10,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonatomic) SignalAddress *address;
 @property (readonly, nonatomic) SignalContext *context;
 
-- (instancetype) initWithAddress:(SignalAddress*)address
-                         context:(SignalContext*)context;
+- (instancetype)initWithAddress:(SignalAddress *)address context:(SignalContext *)context;
 
-- (nullable SignalCiphertext*)encryptData:(NSData*)data error:(NSError**)error;
-- (nullable NSData*)decryptCiphertext:(SignalCiphertext*)ciphertext error:(NSError**)error;
+- (nullable SignalCiphertext *)encryptData:(NSData *)data error:(NSError **)error;
+- (nullable NSData *)decryptCiphertext:(SignalCiphertext *)ciphertext error:(NSError **)error;
 
 @end
 

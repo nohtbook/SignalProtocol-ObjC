@@ -5,7 +5,7 @@
 #pragma mark signal_protocol_session_store callbacks
 
 static int load_session_func(signal_buffer **record, const signal_protocol_address *address, void *user_data) {
-    id <SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
+    id<SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
     SignalAddress *addr = [[SignalAddress alloc] initWithAddress:address];
     NSData *data = nil;
     if (addr) {
@@ -22,9 +22,9 @@ static int load_session_func(signal_buffer **record, const signal_protocol_addre
 }
 
 static int get_sub_device_sessions_func(signal_int_list **sessions, const char *name, size_t name_len, void *user_data) {
-    id <SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
+    id<SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
     NSString *nameString = [NSString stringWithUTF8String:name];
-    NSArray<NSNumber*> *deviceIds = [sessionStore allDeviceIdsForAddressName:nameString];
+    NSArray<NSNumber *> *deviceIds = [sessionStore allDeviceIdsForAddressName:nameString];
     signal_int_list *list = signal_int_list_alloc();
     if (!list) {
         return -1;
@@ -37,7 +37,7 @@ static int get_sub_device_sessions_func(signal_int_list **sessions, const char *
 }
 
 static int store_session_func(const signal_protocol_address *address, uint8_t *record, size_t record_len, void *user_data) {
-    id <SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
+    id<SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
     SignalAddress *addr = [[SignalAddress alloc] initWithAddress:address];
     if (!addr) {
         return -1;
@@ -52,7 +52,7 @@ static int store_session_func(const signal_protocol_address *address, uint8_t *r
 }
 
 static int contains_session_func(const signal_protocol_address *address, void *user_data) {
-    id <SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
+    id<SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
     SignalAddress *addr = [[SignalAddress alloc] initWithAddress:address];
     if (!addr) {
         return -1;
@@ -62,7 +62,7 @@ static int contains_session_func(const signal_protocol_address *address, void *u
 }
 
 static int delete_session_func(const signal_protocol_address *address, void *user_data) {
-    id <SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
+    id<SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
     SignalAddress *addr = [[SignalAddress alloc] initWithAddress:address];
     if (!addr) {
         return -1;
@@ -72,7 +72,7 @@ static int delete_session_func(const signal_protocol_address *address, void *use
 }
 
 static int delete_all_sessions_func(const char *name, size_t name_len, void *user_data) {
-    id <SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
+    id<SignalSessionStore> sessionStore = (__bridge id<SignalSessionStore>)(user_data);
     int result = [sessionStore deleteAllSessionsForAddressName:[NSString stringWithUTF8String:name]];
     return result;
 }
@@ -82,7 +82,7 @@ static void destroy_func(void *user_data) {}
 #pragma mark signal_protocol_pre_key_store
 
 static int load_pre_key(signal_buffer **record, uint32_t pre_key_id, void *user_data) {
-    id <SignalPreKeyStore> preKeyStore = (__bridge id<SignalPreKeyStore>)(user_data);
+    id<SignalPreKeyStore> preKeyStore = (__bridge id<SignalPreKeyStore>)(user_data);
     NSData *preKey = [preKeyStore loadPreKeyWithId:pre_key_id];
     if (!preKey) {
         return SG_ERR_INVALID_KEY_ID;
@@ -93,7 +93,7 @@ static int load_pre_key(signal_buffer **record, uint32_t pre_key_id, void *user_
 }
 
 static int store_pre_key(uint32_t pre_key_id, uint8_t *record, size_t record_len, void *user_data) {
-    id <SignalPreKeyStore> preKeyStore = (__bridge id<SignalPreKeyStore>)(user_data);
+    id<SignalPreKeyStore> preKeyStore = (__bridge id<SignalPreKeyStore>)(user_data);
     NSData *preKey = [NSData dataWithBytes:record length:record_len];
     BOOL success = [preKeyStore storePreKey:preKey preKeyId:pre_key_id];
     if (success) {
@@ -104,13 +104,13 @@ static int store_pre_key(uint32_t pre_key_id, uint8_t *record, size_t record_len
 }
 
 static int contains_pre_key(uint32_t pre_key_id, void *user_data) {
-    id <SignalPreKeyStore> preKeyStore = (__bridge id<SignalPreKeyStore>)(user_data);
+    id<SignalPreKeyStore> preKeyStore = (__bridge id<SignalPreKeyStore>)(user_data);
     BOOL containsPreKey = [preKeyStore containsPreKeyWithId:pre_key_id];
     return containsPreKey;
 }
 
 static int remove_pre_key(uint32_t pre_key_id, void *user_data) {
-    id <SignalPreKeyStore> preKeyStore = (__bridge id<SignalPreKeyStore>)(user_data);
+    id<SignalPreKeyStore> preKeyStore = (__bridge id<SignalPreKeyStore>)(user_data);
     BOOL success = [preKeyStore deletePreKeyWithId:pre_key_id];
     if (success) {
         return 0;
@@ -122,7 +122,7 @@ static int remove_pre_key(uint32_t pre_key_id, void *user_data) {
 #pragma mark signal_protocol_signed_pre_key_store
 
 static int load_signed_pre_key(signal_buffer **record, uint32_t signed_pre_key_id, void *user_data) {
-    id <SignalSignedPreKeyStore> signedPreKeyStore = (__bridge id<SignalSignedPreKeyStore>)(user_data);
+    id<SignalSignedPreKeyStore> signedPreKeyStore = (__bridge id<SignalSignedPreKeyStore>)(user_data);
     NSData *key = [signedPreKeyStore loadSignedPreKeyWithId:signed_pre_key_id];
     if (!key) {
         return SG_ERR_INVALID_KEY_ID;
@@ -133,7 +133,7 @@ static int load_signed_pre_key(signal_buffer **record, uint32_t signed_pre_key_i
 }
 
 static int store_signed_pre_key(uint32_t signed_pre_key_id, uint8_t *record, size_t record_len, void *user_data) {
-    id <SignalSignedPreKeyStore> signedPreKeyStore = (__bridge id<SignalSignedPreKeyStore>)(user_data);
+    id<SignalSignedPreKeyStore> signedPreKeyStore = (__bridge id<SignalSignedPreKeyStore>)(user_data);
     NSData *key = [NSData dataWithBytes:record length:record_len];
     BOOL result = [signedPreKeyStore storeSignedPreKey:key signedPreKeyId:signed_pre_key_id];
     if (result) {
@@ -144,13 +144,13 @@ static int store_signed_pre_key(uint32_t signed_pre_key_id, uint8_t *record, siz
 }
 
 static int contains_signed_pre_key(uint32_t signed_pre_key_id, void *user_data) {
-    id <SignalSignedPreKeyStore> signedPreKeyStore = (__bridge id<SignalSignedPreKeyStore>)(user_data);
+    id<SignalSignedPreKeyStore> signedPreKeyStore = (__bridge id<SignalSignedPreKeyStore>)(user_data);
     BOOL result = [signedPreKeyStore containsSignedPreKeyWithId:signed_pre_key_id];
     return result;
 }
 
 static int remove_signed_pre_key(uint32_t signed_pre_key_id, void *user_data) {
-    id <SignalSignedPreKeyStore> signedPreKeyStore = (__bridge id<SignalSignedPreKeyStore>)(user_data);
+    id<SignalSignedPreKeyStore> signedPreKeyStore = (__bridge id<SignalSignedPreKeyStore>)(user_data);
     BOOL result = [signedPreKeyStore removeSignedPreKeyWithId:signed_pre_key_id];
     if (result) {
         return 0;
@@ -162,7 +162,7 @@ static int remove_signed_pre_key(uint32_t signed_pre_key_id, void *user_data) {
 #pragma mark signal_protocol_identity_key_store
 
 static int get_identity_key_pair(signal_buffer **public_data, signal_buffer **private_data, void *user_data) {
-    id <SignalIdentityKeyStore> identityKeyStore = (__bridge id<SignalIdentityKeyStore>)(user_data);
+    id<SignalIdentityKeyStore> identityKeyStore = (__bridge id<SignalIdentityKeyStore>)(user_data);
     SignalKeyPair *keyPair = [identityKeyStore getIdentityKeyPair];
     if (!keyPair) {
         return -1;
@@ -179,7 +179,7 @@ static int get_identity_key_pair(signal_buffer **public_data, signal_buffer **pr
 }
 
 static int get_local_registration_id(void *user_data, uint32_t *registration_id) {
-    id <SignalIdentityKeyStore> identityKeyStore = (__bridge id<SignalIdentityKeyStore>)(user_data);
+    id<SignalIdentityKeyStore> identityKeyStore = (__bridge id<SignalIdentityKeyStore>)(user_data);
     uint32_t regId = [identityKeyStore getLocalRegistrationId];
     if (regId > 0) {
         *registration_id = regId;
@@ -190,7 +190,7 @@ static int get_local_registration_id(void *user_data, uint32_t *registration_id)
 }
 
 static int save_identity(const signal_protocol_address *_address, uint8_t *key_data, size_t key_len, void *user_data) {
-    id <SignalIdentityKeyStore> identityKeyStore = (__bridge id<SignalIdentityKeyStore>)(user_data);
+    id<SignalIdentityKeyStore> identityKeyStore = (__bridge id<SignalIdentityKeyStore>)(user_data);
     SignalAddress *address = [[SignalAddress alloc] initWithAddress:_address];
     NSData *key = nil;
     if (key_data) {
@@ -205,7 +205,7 @@ static int save_identity(const signal_protocol_address *_address, uint8_t *key_d
 }
 
 static int is_trusted_identity(const signal_protocol_address *_address, uint8_t *key_data, size_t key_len, void *user_data) {
-    id <SignalIdentityKeyStore> identityKeyStore = (__bridge id<SignalIdentityKeyStore>)(user_data);
+    id<SignalIdentityKeyStore> identityKeyStore = (__bridge id<SignalIdentityKeyStore>)(user_data);
     SignalAddress *address = [[SignalAddress alloc] initWithAddress:_address];
     NSData *key = [NSData dataWithBytes:key_data length:key_len];
     BOOL isTrusted = [identityKeyStore isTrustedIdentity:address identityKey:key];
@@ -215,7 +215,7 @@ static int is_trusted_identity(const signal_protocol_address *_address, uint8_t 
 #pragma mark signal_protocol_sender_key_store
 
 static int store_sender_key(const signal_protocol_sender_key_name *sender_key_name, uint8_t *record, size_t record_len, void *user_data) {
-    id <SignalSenderKeyStore> senderKeyStore = (__bridge id<SignalSenderKeyStore>)(user_data);
+    id<SignalSenderKeyStore> senderKeyStore = (__bridge id<SignalSenderKeyStore>)(user_data);
     SignalAddress *address = [[SignalAddress alloc] initWithAddress:&sender_key_name->sender];
     NSString *groupId = [NSString stringWithUTF8String:sender_key_name->group_id];
     NSData *key = [NSData dataWithBytes:record length:record_len];
@@ -228,7 +228,7 @@ static int store_sender_key(const signal_protocol_sender_key_name *sender_key_na
 }
 
 static int load_sender_key(signal_buffer **record, const signal_protocol_sender_key_name *sender_key_name, void *user_data) {
-    id <SignalSenderKeyStore> senderKeyStore = (__bridge id<SignalSenderKeyStore>)(user_data);
+    id<SignalSenderKeyStore> senderKeyStore = (__bridge id<SignalSenderKeyStore>)(user_data);
     SignalAddress *address = [[SignalAddress alloc] initWithAddress:&sender_key_name->sender];
     NSString *groupId = [NSString stringWithUTF8String:sender_key_name->group_id];
     NSData *key = [senderKeyStore loadSenderKeyForAddress:address groupId:groupId];
@@ -245,24 +245,24 @@ static int load_sender_key(signal_buffer **record, const signal_protocol_sender_
 
 @implementation SignalStorage
 
-- (void) dealloc {
+- (void)dealloc {
     if (_storeContext) {
         signal_protocol_store_context_destroy(_storeContext);
     }
     _storeContext = NULL;
 }
 
-- (instancetype) initWithSignalStore:(id<SignalStore>)signalStore {
+- (instancetype)initWithSignalStore:(id<SignalStore>)signalStore {
     if (self = [self initWithSessionStore:signalStore preKeyStore:signalStore signedPreKeyStore:signalStore identityKeyStore:signalStore senderKeyStore:signalStore]){
     }
     return self;
 }
 
-- (instancetype) initWithSessionStore:(id<SignalSessionStore>)sessionStore
-                          preKeyStore:(id<SignalPreKeyStore>)preKeyStore
-                    signedPreKeyStore:(id<SignalSignedPreKeyStore>)signedPreKeyStore
-                     identityKeyStore:(id<SignalIdentityKeyStore>)identityKeyStore
-                       senderKeyStore:(id<SignalSenderKeyStore>)senderKeyStore {
+- (instancetype)initWithSessionStore:(id<SignalSessionStore>)sessionStore
+                         preKeyStore:(id<SignalPreKeyStore>)preKeyStore
+                   signedPreKeyStore:(id<SignalSignedPreKeyStore>)signedPreKeyStore
+                    identityKeyStore:(id<SignalIdentityKeyStore>)identityKeyStore
+                      senderKeyStore:(id<SignalSenderKeyStore>)senderKeyStore {
     NSParameterAssert(sessionStore);
     NSParameterAssert(preKeyStore);
     NSParameterAssert(signedPreKeyStore);
@@ -278,7 +278,7 @@ static int load_sender_key(signal_buffer **record, const signal_protocol_sender_
     return self;
 }
 
-- (void) setupWithContext:(signal_context*)context {
+- (void)setupWithContext:(signal_context *)context {
     NSParameterAssert(context != NULL);
     if (!context) {
         return;

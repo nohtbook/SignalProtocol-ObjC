@@ -10,6 +10,6 @@
 @property (readonly, nonatomic) id<SignalSenderKeyStore> senderKeyStore;
 @property (readonly, nonatomic) signal_protocol_store_context *storeContext;
 
-- (void) setupWithContext:(signal_context*)context;
+- (void)setupWithContext:(signal_context *)context;
 
 @end

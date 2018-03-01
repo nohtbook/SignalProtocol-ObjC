@@ -5,13 +5,13 @@
 
 @synthesize identity_key_pair = _identity_key_pair;
 
-- (void) dealloc {
+- (void)dealloc {
     if (_identity_key_pair) {
         SIGNAL_UNREF(_identity_key_pair);
     }
 }
 
-- (ratchet_identity_key_pair*) identity_key_pair {
+- (ratchet_identity_key_pair *)identity_key_pair {
     if (!_identity_key_pair) {
         NSParameterAssert(self.ec_private_key);
         NSParameterAssert(self.ec_public_key);
@@ -21,7 +21,7 @@
     return _identity_key_pair;
 }
 
-- (instancetype) initWithIdentityKeyPair:(ratchet_identity_key_pair*)identity_key_pair {
+- (instancetype)initWithIdentityKeyPair:(ratchet_identity_key_pair *)identity_key_pair {
     NSParameterAssert(identity_key_pair);
     if (!identity_key_pair) { return nil; }
     ec_private_key *private = ratchet_identity_key_pair_get_private(identity_key_pair);
@@ -35,7 +35,7 @@
 
 #pragma mark NSSecureCoding
 
-+ (BOOL) supportsSecureCoding {
++ (BOOL)supportsSecureCoding {
     return YES;
 }
 

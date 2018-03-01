@@ -2,8 +2,7 @@
 
 @implementation SignalCiphertext
 
-- (instancetype) initWithData:(NSData*)data
-                         type:(SignalCiphertextType)type {
+- (instancetype)initWithData:(NSData *)data type:(SignalCiphertextType)type {
     NSParameterAssert(data);
     if (!data) { return nil; }
     if (self = [super init]) {

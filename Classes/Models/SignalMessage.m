@@ -4,9 +4,9 @@
 
 @implementation SignalMessage
 
-- (instancetype) initWithData:(NSData*)data
-                      context:(SignalContext*)context
-                        error:(NSError**)error {
+- (instancetype)initWithData:(NSData *)data
+                     context:(SignalContext *)context
+                       error:(NSError **)error {
     NSParameterAssert(data);
     NSParameterAssert(context);
     if (!data || !context) {

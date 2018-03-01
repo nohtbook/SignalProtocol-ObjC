@@ -7,7 +7,7 @@
 @synthesize privateKey = _privateKey;
 @synthesize ec_key_pair = _ec_key_pair;
 
-- (void) dealloc {
+- (void)dealloc {
     if (_ec_key_pair) {
         SIGNAL_UNREF(_ec_key_pair);
     }
@@ -19,7 +19,7 @@
     }
 }
 
-- (ec_key_pair*)ec_key_pair {
+- (ec_key_pair *)ec_key_pair {
     if (!_ec_key_pair) {
         NSParameterAssert(_ec_private_key);
         NSParameterAssert(_ec_public_key);
@@ -30,7 +30,7 @@
     return _ec_key_pair;
 }
 
-- (NSData*) privateKey {
+- (NSData *)privateKey {
     if (!_privateKey) {
         ec_private_key *private = [self ec_private_key];
         NSParameterAssert(private);
@@ -46,7 +46,7 @@
     return _privateKey;
 }
 
-- (NSData*) publicKey {
+- (NSData *)publicKey {
     if (!_publicKey) {
         ec_public_key *public = [self ec_public_key];
         NSParameterAssert(public);
@@ -62,8 +62,8 @@
     return _publicKey;
 }
 
-- (instancetype) initWithECPublicKey:(ec_public_key*)ec_public_key
-                        ecPrivateKey:(ec_private_key*)ec_private_key {
+- (instancetype)initWithECPublicKey:(ec_public_key *)ec_public_key
+                       ecPrivateKey:(ec_private_key *)ec_private_key {
     NSParameterAssert(ec_public_key);
     NSParameterAssert(ec_private_key);
     if (!ec_public_key || !ec_private_key) { return nil; }
@@ -76,7 +76,7 @@
     return self;
 }
 
-+ (nullable ec_public_key*)publicKeyFromData:(NSData*)data error:(NSError**)error {
++ (nullable ec_public_key *)publicKeyFromData:(NSData *)data error:(NSError **)error {
     NSParameterAssert(data);
     if (!data) { return nil; }
     ec_public_key *public = NULL;
@@ -90,9 +90,9 @@
     return public;
 }
 
-- (nullable instancetype) initWithPublicKey:(NSData*)publicKey
-                        privateKey:(NSData*)privateKey
-                             error:(NSError**)error {
+- (nullable instancetype)initWithPublicKey:(NSData *)publicKey
+                                privateKey:(NSData *)privateKey
+                                     error:(NSError **)error {
     NSParameterAssert(publicKey);
     NSParameterAssert(privateKey);
     if (!publicKey || !privateKey) {
@@ -121,7 +121,7 @@
     return self;
 }
 
-- (nullable instancetype) initWithECKeyPair:(ec_key_pair*)ec_key_pair {
+- (nullable instancetype)initWithECKeyPair:(ec_key_pair *)ec_key_pair {
     NSParameterAssert(ec_key_pair);
     if (!ec_key_pair) { return nil; }
     ec_private_key *private = ec_key_pair_get_private(ec_key_pair);
@@ -135,7 +135,7 @@
 
 #pragma mark NSSecureCoding
 
-+ (BOOL) supportsSecureCoding {
++ (BOOL)supportsSecureCoding {
     return YES;
 }
 

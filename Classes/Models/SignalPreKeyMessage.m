@@ -4,15 +4,15 @@
 
 @implementation SignalPreKeyMessage
 
-- (void) dealloc {
+- (void)dealloc {
     if (_pre_key_signal_message) {
         SIGNAL_UNREF(_pre_key_signal_message);
     }
 }
 
-- (instancetype) initWithData:(NSData*)data
-                      context:(SignalContext*)context
-                        error:(NSError**)error {
+- (instancetype)initWithData:(NSData *)data
+                     context:(SignalContext *)context
+                       error:(NSError **)error {
     NSParameterAssert(data);
     NSParameterAssert(context);
     if (!data || !context) {
