@@ -1,4 +1,3 @@
-#import "SignalAddress.h"
 #import "SignalAddress_Internal.h"
 
 @implementation SignalAddress

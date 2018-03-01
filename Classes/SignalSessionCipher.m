@@ -1,12 +1,10 @@
 #import "SignalSessionCipher.h"
-#import "SignalContext_Internal.h"
-#import "SignalStorage_Internal.h"
 #import "SignalAddress_Internal.h"
+#import "SignalContext_Internal.h"
+#import "SignalError.h"
 #import "SignalMessage_Internal.h"
 #import "SignalPreKeyMessage_Internal.h"
-#import "SignalError.h"
-
-@import SignalProtocolC;
+#import "SignalStorage_Internal.h"
 
 @interface SignalSessionCipher ()
 @property (nonatomic, readonly) session_cipher *cipher;

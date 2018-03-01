@@ -1,6 +1,6 @@
 @import Foundation;
-#import "SignalSerializable.h"
 #import "SignalKeyPair.h"
+#import "SignalSerializable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface SignalPreKey : NSObject <SignalSerializable, NSSecureCoding>

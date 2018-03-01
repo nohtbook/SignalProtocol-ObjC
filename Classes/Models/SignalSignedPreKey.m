@@ -1,4 +1,3 @@
-#import "SignalSignedPreKey.h"
 #import "SignalSignedPreKey_Internal.h"
 #import "SignalError.h"
 #import "SignalKeyPair_Internal.h"

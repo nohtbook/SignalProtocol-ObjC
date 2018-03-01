@@ -1,7 +1,6 @@
-#import "SignalMessage.h"
 #import "SignalMessage_Internal.h"
-#import "SignalError.h"
 #import "SignalContext_Internal.h"
+#import "SignalError.h"
 
 @implementation SignalMessage
 

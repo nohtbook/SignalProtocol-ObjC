@@ -1,4 +1,3 @@
-#import "SignalIdentityKeyPair.h"
 #import "SignalIdentityKeyPair_Internal.h"
 #import "SignalKeyPair_Internal.h"
 

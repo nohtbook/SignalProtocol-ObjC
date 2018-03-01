@@ -1,7 +1,6 @@
-#import "SignalPreKey.h"
 #import "SignalPreKey_Internal.h"
-#import "SignalKeyPair_Internal.h"
 #import "SignalError.h"
+#import "SignalKeyPair_Internal.h"
 
 @implementation SignalPreKey
 

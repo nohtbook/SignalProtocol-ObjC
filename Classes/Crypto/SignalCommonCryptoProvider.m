@@ -1,6 +1,6 @@
-#import "SignalCommonCryptoProvider.h"
 #import <CommonCrypto/CommonCrypto.h>
 #import <CommonCrypto/CommonRandom.h>
+#import "SignalCommonCryptoProvider.h"
 
 static int random_func(uint8_t *data, size_t len, void *user_data) {
     CCRNGStatus result = CCRandomGenerateBytes(data, len);

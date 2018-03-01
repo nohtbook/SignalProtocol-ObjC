@@ -1,7 +1,6 @@
-#import "SignalPreKeyBundle.h"
 #import "SignalPreKeyBundle_Internal.h"
-#import "SignalKeyPair_Internal.h"
 #import "SignalError.h"
+#import "SignalKeyPair_Internal.h"
 
 @implementation SignalPreKeyBundle
 

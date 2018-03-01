@@ -1,8 +1,8 @@
 @import Foundation;
-#import "SignalSessionStore.h"
 #import "SignalIdentityKeyStore.h"
 #import "SignalPreKeyStore.h"
 #import "SignalSenderKeyStore.h"
+#import "SignalSessionStore.h"
 #import "SignalSignedPreKeyStore.h"
 
 @protocol SignalStore <SignalSessionStore, SignalPreKeyStore, SignalSignedPreKeyStore, SignalIdentityKeyStore, SignalSenderKeyStore>

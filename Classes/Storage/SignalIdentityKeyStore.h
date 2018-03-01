@@ -1,4 +1,5 @@
 @import Foundation;
+#import "SignalAddress.h"
 #import "SignalIdentityKeyPair.h"
 
 

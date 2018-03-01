@@ -1,7 +1,7 @@
 @import Foundation;
 #import "SignalAddress.h"
-#import "SignalContext.h"
 #import "SignalCiphertext.h"
+#import "SignalContext.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @interface SignalSessionCipher : NSObject

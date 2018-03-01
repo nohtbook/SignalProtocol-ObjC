@@ -1,8 +1,9 @@
 #import "SignalSessionBuilder.h"
-#import "SignalStorage_Internal.h"
-#import "SignalContext_Internal.h"
 #import "SignalAddress_Internal.h"
+#import "SignalContext_Internal.h"
+#import "SignalError.h"
 #import "SignalPreKeyBundle_Internal.h"
+#import "SignalStorage_Internal.h"
 
 @interface SignalSessionBuilder()
 @property (nonatomic, readonly) session_builder *builder;

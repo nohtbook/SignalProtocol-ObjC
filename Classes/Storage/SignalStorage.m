@@ -1,7 +1,6 @@
 #import "SignalStorage.h"
 #import "SignalAddress_Internal.h"
 #import "SignalStorage_Internal.h"
-@import SignalProtocolC;
 
 #pragma mark signal_protocol_session_store callbacks
 

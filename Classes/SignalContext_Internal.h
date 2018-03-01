@@ -1,5 +1,4 @@
 #import "SignalContext.h"
-#import "SignalCommonCryptoProvider.h"
 @import SignalProtocolC;
 
 @interface SignalContext ()

@@ -1,10 +1,8 @@
 #import "SignalKeyHelper.h"
 #import "SignalContext_Internal.h"
-#import "SignalError.h"
 #import "SignalIdentityKeyPair_Internal.h"
 #import "SignalPreKey_Internal.h"
 #import "SignalSignedPreKey_Internal.h"
-@import SignalProtocolC;
 
 @implementation SignalKeyHelper
 
