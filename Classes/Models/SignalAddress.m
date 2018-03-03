@@ -17,9 +17,9 @@
         _name = [name copy];
         _deviceId = deviceId;
         _address = malloc(sizeof(signal_protocol_address));
-        _address->name = [self.name UTF8String];
-        _address->name_len = [self.name lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
-        _address->device_id = self.deviceId;
+        _address->name = [name UTF8String];
+        _address->name_len = [name lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+        _address->device_id = deviceId;
     }
     return self;
 }
