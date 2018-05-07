@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Get the local client's identity key pair.
  */
-- (SignalIdentityKeyPair *)getIdentityKeyPair;
+- (nullable SignalIdentityKeyPair *)getIdentityKeyPair;
 
 /**
  * Return the local client's registration ID.
