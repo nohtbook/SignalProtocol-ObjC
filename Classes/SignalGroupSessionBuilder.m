@@ -1,7 +1,7 @@
 #import "SignalGroupSessionBuilder.h"
 #import "SignalContext_Internal.h"
 #import "SignalError.h"
-#import "SignalSenderKeyDistributionMessage_Internal.h"
+#import "SignalSKDM_Internal.h"
 #import "SignalSenderKeyName_Internal.h"
 #import "SignalStorage_Internal.h"
 
@@ -33,17 +33,17 @@
 }
 
 - (BOOL)processSessionWithSenderKeyName:(SignalSenderKeyName *)senderKeyName
-           senderKeyDistributionMessage:(SignalSenderKeyDistributionMessage *)senderKeyDistributionMessage
+                                   skdm:(SignalSKDM *)skdm
                                   error:(NSError **)error {
     NSParameterAssert(senderKeyName);
-    NSParameterAssert(senderKeyDistributionMessage);
-    if (!senderKeyName || !senderKeyDistributionMessage) {
+    NSParameterAssert(skdm);
+    if (!senderKeyName || !skdm) {
         if (error) {
             *error = ErrorFromSignalError(SignalErrorInvalidArgument);
         }
         return NO;
     }
-    int result = group_session_builder_process_session(_builder, senderKeyName.sender_key_name, senderKeyDistributionMessage.sender_key_distribution_message);
+    int result = group_session_builder_process_session(_builder, senderKeyName.sender_key_name, skdm.skdm);
     if (result < 0) {
         if (error) {
             *error = ErrorFromSignalError(result);
@@ -53,7 +53,7 @@
     return YES;
 }
 
-- (SignalSenderKeyDistributionMessage *)createSessionWithSenderKeyName:(SignalSenderKeyName *)senderKeyName
+- (SignalSKDM *)createSessionWithSenderKeyName:(SignalSenderKeyName *)senderKeyName
                                                                  error:(NSError **)error {
     NSParameterAssert(senderKeyName);
     if (!senderKeyName) {
@@ -62,13 +62,13 @@
         }
         return nil;
     }
-    sender_key_distribution_message *distribution_message = NULL;
-    int result = group_session_builder_create_session(_builder, &distribution_message, senderKeyName.sender_key_name);
-    if (result < 0 || !distribution_message) {
+    sender_key_distribution_message *skdm = NULL;
+    int result = group_session_builder_create_session(_builder, &skdm, senderKeyName.sender_key_name);
+    if (result < 0 || !skdm) {
         *error = ErrorFromSignalError(SignalErrorFromCode(result));
         return nil;
     }
-    return [[SignalSenderKeyDistributionMessage alloc] initWithSenderKeyDistributionMessage:distribution_message];
+    return [[SignalSKDM alloc] initWithSKDM:skdm];
 }
 
 @end

@@ -1,6 +1,6 @@
 @import Foundation;
 #import "SignalContext.h"
-#import "SignalSenderKeyDistributionMessage.h"
+#import "SignalSKDM.h"
 #import "SignalSenderKeyName.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -12,9 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithContext:(SignalContext *)context;
 
 - (BOOL)processSessionWithSenderKeyName:(SignalSenderKeyName *)senderKeyName
-           senderKeyDistributionMessage:(SignalSenderKeyDistributionMessage *)senderKeyDistributionMessage
+                                   skdm:(SignalSKDM *)skdm
                                   error:(NSError **)error;
-- (nullable SignalSenderKeyDistributionMessage *)createSessionWithSenderKeyName:(SignalSenderKeyName *)senderKeyName
+- (nullable SignalSKDM *)createSessionWithSenderKeyName:(SignalSenderKeyName *)senderKeyName
                                                                           error:(NSError **)error;
 
 @end

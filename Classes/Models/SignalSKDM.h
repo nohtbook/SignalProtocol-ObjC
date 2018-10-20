@@ -3,7 +3,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SignalSenderKeyDistributionMessage : NSObject
+@interface SignalSKDM : NSObject
 
 - (nullable instancetype)initWithData:(NSData *)data
                               context:(SignalContext *)context

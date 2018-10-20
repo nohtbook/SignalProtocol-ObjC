@@ -1,20 +1,20 @@
-#import "SignalSenderKeyDistributionMessage_Internal.h"
+#import "SignalSKDM_Internal.h"
 #import "SignalContext_Internal.h"
 #import "SignalError.h"
 
-@implementation SignalSenderKeyDistributionMessage
+@implementation SignalSKDM
 
 - (void)dealloc {
-    if (_sender_key_distribution_message) {
-        SIGNAL_UNREF(_sender_key_distribution_message);
+    if (_skdm) {
+        SIGNAL_UNREF(_skdm);
     }
 }
 
-- (instancetype)initWithSenderKeyDistributionMessage:(sender_key_distribution_message *)sender_key_distribution_message {
-    NSParameterAssert(sender_key_distribution_message);
-    if (!sender_key_distribution_message) { return nil; }
+- (instancetype)initWithSKDM:(sender_key_distribution_message *)skdm {
+    NSParameterAssert(skdm);
+    if (!skdm) { return nil; }
     if (self = [super init]) {
-        _sender_key_distribution_message = sender_key_distribution_message;
+        _skdm = skdm;
     }
     return self;
 }
@@ -31,8 +31,8 @@
         return nil;
     }
     if (self = [super init]) {
-        int result = sender_key_distribution_message_deserialize(&_sender_key_distribution_message, data.bytes, data.length, context.context);
-        if (result < 0 || !_sender_key_distribution_message) {
+        int result = sender_key_distribution_message_deserialize(&_skdm, data.bytes, data.length, context.context);
+        if (result < 0 || !_skdm) {
             if (error) {
                 *error = ErrorFromSignalError(SignalErrorFromCode(result));
             }
@@ -43,7 +43,7 @@
 }
 
 - (NSData *)serializedData {
-    ciphertext_message *message = (ciphertext_message *)_sender_key_distribution_message;
+    ciphertext_message *message = (ciphertext_message *)_skdm;
     signal_buffer *serialized = ciphertext_message_get_serialized(message);
     return [NSData dataWithBytes:signal_buffer_data(serialized) length:signal_buffer_len(serialized)];
 }

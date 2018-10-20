@@ -21,7 +21,7 @@ FOUNDATION_EXPORT const unsigned char SignalProtocolObjCVersionString[];
 #import "SignalPreKeyBundle.h"
 #import "SignalPreKeyMessage.h"
 #import "SignalPreKeyStore.h"
-#import "SignalSenderKeyDistributionMessage.h"
+#import "SignalSKDM.h"
 #import "SignalSenderKeyName.h"
 #import "SignalSenderKeyStore.h"
 #import "SignalSerializable.h"
