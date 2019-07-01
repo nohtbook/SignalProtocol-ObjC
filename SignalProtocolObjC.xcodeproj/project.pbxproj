@@ -481,7 +481,7 @@
 			};
 			buildConfigurationList = D92D744F1E8DAA4500B478E8 /* Build configuration list for PBXProject "SignalProtocolObjC" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
