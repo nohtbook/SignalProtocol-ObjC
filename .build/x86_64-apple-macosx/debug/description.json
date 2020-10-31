@@ -1,0 +1,19 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "\/Users\/reasonamu\/Desktop\/SignalProtocol-ObjC\/.build\/x86_64-apple-macosx\/debug\/SignalProtocol-ObjCPackageTests.xctest\/Contents\/MacOS\/SignalProtocol-ObjCPackageTests",
+      "packageName" : "SignalProtocol-ObjC",
+      "productName" : "SignalProtocol-ObjCPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "swiftTargetMap" : {
+    "C.SignalProtocol-ObjC-debug.module" : "SignalProtocol-ObjC",
+    "C.SignalProtocol-ObjCTests-debug.module" : "SignalProtocol-ObjCTests"
+  },
+  "testDiscoveryCommands" : {
+
+  }
+}

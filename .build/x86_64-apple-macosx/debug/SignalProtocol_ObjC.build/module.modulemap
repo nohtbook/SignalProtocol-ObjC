@@ -1,0 +1,4 @@
+module SignalProtocol_ObjC {
+    header "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjC.build/SignalProtocol-ObjC-Swift.h"
+    requires objc
+}

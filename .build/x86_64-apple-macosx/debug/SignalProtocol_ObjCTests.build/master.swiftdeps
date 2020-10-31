@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+options: "cb5b734e8e9f348aeca6830d1b544549"
+build_time: [1604172199, 275207000]
+inputs:
+  "/Users/reasonamu/Desktop/SignalProtocol-ObjC/Tests/SignalProtocol-ObjCTests/SignalProtocol_ObjCTests.swift": [1604172168, 3505505]
+  "/Users/reasonamu/Desktop/SignalProtocol-ObjC/Tests/SignalProtocol-ObjCTests/XCTestManifests.swift": [1604172168, 3691949]

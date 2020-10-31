@@ -1,0 +1,17 @@
+{
+  "": {
+    "swift-dependencies": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjCTests.build/master.swiftdeps"
+  },
+  "/Users/reasonamu/Desktop/SignalProtocol-ObjC/Tests/SignalProtocol-ObjCTests/SignalProtocol_ObjCTests.swift": {
+    "dependencies": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjCTests.build/SignalProtocol_ObjCTests.d",
+    "object": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjCTests.build/SignalProtocol_ObjCTests.swift.o",
+    "swiftmodule": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjCTests.build/SignalProtocol_ObjCTests~partial.swiftmodule",
+    "swift-dependencies": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjCTests.build/SignalProtocol_ObjCTests.swiftdeps"
+  },
+  "/Users/reasonamu/Desktop/SignalProtocol-ObjC/Tests/SignalProtocol-ObjCTests/XCTestManifests.swift": {
+    "dependencies": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjCTests.build/XCTestManifests.d",
+    "object": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjCTests.build/XCTestManifests.swift.o",
+    "swiftmodule": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjCTests.build/XCTestManifests~partial.swiftmodule",
+    "swift-dependencies": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjCTests.build/XCTestManifests.swiftdeps"
+  }
+}

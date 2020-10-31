@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjC.build/master.swiftdeps"
+  },
+  "/Users/reasonamu/Desktop/SignalProtocol-ObjC/Sources/SignalProtocol-ObjC/SignalProtocol_ObjC.swift": {
+    "dependencies": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjC.build/SignalProtocol_ObjC.d",
+    "object": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjC.build/SignalProtocol_ObjC.swift.o",
+    "swiftmodule": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjC.build/SignalProtocol_ObjC~partial.swiftmodule",
+    "swift-dependencies": "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjC.build/SignalProtocol_ObjC.swiftdeps"
+  }
+}

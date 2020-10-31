@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+options: "79b27b848dcb871f30207379499e7f91"
+build_time: [1604172187, 621335000]
+inputs:
+  "/Users/reasonamu/Desktop/SignalProtocol-ObjC/Sources/SignalProtocol-ObjC/SignalProtocol_ObjC.swift": [1604172168, 2676319]

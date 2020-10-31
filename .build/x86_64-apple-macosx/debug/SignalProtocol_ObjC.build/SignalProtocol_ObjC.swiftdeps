@@ -1,0 +1,22 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "SignalProtocol_ObjC"
+provides-nominal:
+- "19SignalProtocol_ObjCAAV"
+provides-member:
+- ["19SignalProtocol_ObjCAAV", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "SignalProtocol_ObjC"
+- "StringLiteralType"
+depends-member:
+- ["19SignalProtocol_ObjCAAV", "init"]
+- ["19SignalProtocol_ObjCAAV", "text"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+depends-nominal:
+- "19SignalProtocol_ObjCAAV"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/reasonamu/Desktop/SignalProtocol-ObjC/.build/x86_64-apple-macosx/debug/SignalProtocol_ObjC.build/module.modulemap"
+interface-hash: "5e8fe537d5101aafba1c3930ac5a3ccb"
